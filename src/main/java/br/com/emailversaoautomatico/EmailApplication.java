@@ -22,9 +22,10 @@ public class EmailApplication {
 
     public static WebDriver WEB_DRIVER;
     public static JavascriptExecutor js;
+    private static String pathWebDriver = "CAMINHO_DO_DRIVER_PREFERIDO";
 
     public static void main(String[] args) throws IOException {
-        System.setProperty("webdriver.chrome.driver", "/home/raphaelmoreira/Documentos/chromedriver");
+        System.setProperty("webdriver.chrome.driver", pathWebDriver);
 
         WEB_DRIVER = new ChromeDriver();
 
