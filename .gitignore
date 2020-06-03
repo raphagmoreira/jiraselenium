@@ -1,0 +1,11 @@
+### IntelliJ ###
+*.class
+*.bak
+*.log
+logs/
+.idea/
+*.iml
+*.iws
+
+# Maven
+/target
