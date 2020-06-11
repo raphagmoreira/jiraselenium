@@ -22,7 +22,7 @@ public class EmailApplication {
 
     public static WebDriver WEB_DRIVER;
     public static JavascriptExecutor js;
-    private static String pathWebDriver = "CAMINHO_DO_DRIVER_PREFERIDO";
+    private static String pathWebDriver = "/home/raphaelmoreira/Documentos/chromedriver";
 
     public static void main(String[] args) throws IOException {
         System.setProperty("webdriver.chrome.driver", pathWebDriver);
@@ -53,6 +53,9 @@ public class EmailApplication {
                     .until(ExpectedConditions.elementToBeClickable(By.id("ghx-complete-sprint")));
 
             List<WebElement> tasks = (List<WebElement>) js.executeScript("return $('.ghx-columns [data-column-id=" + quadroTasks + "] .ghx-issue.ghx-newcard.js-detailview.js-issue.js-parent-drag.ghx-card-color-enabled')");
+            tasks.addAll(
+                    (List<WebElement>) js.executeScript("return $('.ghx-columns [data-column-id=" + quadroTasks + "] .ghx-issue')")
+            );
 
             corpoEmail.add("Boa tarde a todos!");
             corpoEmail.add("\n");
