@@ -33,10 +33,10 @@ public class EmailApplication {
         WEB_DRIVER.get("https://finchsolucoes.atlassian.net/");
 
         login(args[0], args[1]);
-        gerarEmail(args[2], EnumQuadro.PENDENTE_VERSAO_QA.toString());
+        gerarEmail(EnumQuadro.PENDENTE_VERSAO_QA.toString());
     }
 
-    public static void gerarEmail(String versao, String quadroTasks) throws IOException {
+    public static void gerarEmail(String quadroTasks) throws IOException {
         List<String> corpoEmail = new ArrayList<>();
 
         if (WEB_DRIVER instanceof JavascriptExecutor) {
@@ -61,7 +61,7 @@ public class EmailApplication {
             corpoEmail.add("\n");
             corpoEmail.add("\n");
             corpoEmail.add("\n");
-            corpoEmail.add("Gerada a versão de homologação " + versao + " com os itens abaixo:");
+            corpoEmail.add("Gerada a versão de homologação com os itens abaixo:");
             corpoEmail.add("\n");
             corpoEmail.add("\n");
             corpoEmail.add("\n");
